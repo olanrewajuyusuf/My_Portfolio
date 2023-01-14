@@ -1,0 +1,488 @@
+body {
+  background: rgb(10, 10, 25);
+  color: linen;
+  font-family: "Raleway", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+main,
+nav,
+.logo-w,
+#navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+header {
+  width: 100%;
+  background: rgb(10, 10, 25);
+  border-bottom: 5px solid linen;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.line {
+  width: 40px;
+  height: 76px;
+  background: blue;
+  position: absolute;
+  transform: skew(35deg);
+  z-index: -1;
+  animation: line 10s linear infinite;
+}
+.line::before {
+  content: "";
+  width: 40px;
+  height: 76px;
+  background: orangered;
+  position: absolute;
+  left: 150%;
+  z-index: -1;
+}
+@keyframes line {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+nav {
+  justify-content: space-between;
+}
+.logo-w {
+  margin-left: 40px;
+}
+.logo {
+  font-family: fantasy;
+  font-size: 20px;
+  color: aliceblue;
+  text-shadow: 1px 1px black, -1px -1px black;
+  position: relative;
+}
+.logo .frame {
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(
+    rgb(57, 50, 50),
+    rgb(104, 102, 102),
+    rgb(38, 12, 12)
+  );
+  box-shadow: 0 0 5px orangered;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -5px;
+  z-index: -1;
+}
+.logo .dee {
+  margin-left: -2px;
+}
+.logo-w h1 {
+  font-family: Verdana;
+  font-size: 20px;
+  text-shadow: -1px 1px black, -2px 2px black, -3px 3px black;
+  color: white;
+  margin: -5px 0 0 10px;
+}
+.menu {
+  display: none;
+}
+#navbar ul {
+  justify-content: space-evenly;
+  margin-right: 30px;
+}
+#navbar ul li {
+  list-style: none;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+#navbar ul li a {
+  text-decoration: none;
+  color: linen;
+}
+#navbar ul li:hover {
+  background: linear-gradient(
+    -45deg,
+    blue 0%,
+    blue 10%,
+    orangered 10%,
+    orangered 20%,
+    transparent 20%,
+    transparent 80%,
+    orangered 80%,
+    orangered 90%,
+    blue 90%,
+    blue 100%
+  );
+}
+#navbar ul li a:hover {
+  color: orangered;
+}
+#home {
+  width: 100%;
+  color: linen;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0px auto 0 auto;
+  padding: 150px 0 100px 0;
+  background: linear-gradient(
+    45deg,
+    rgb(10, 10, 25),
+    rgb(16, 16, 45),
+    rgb(1, 1, 5)
+  );
+}
+#home .about,
+#home .pics {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#home .about {
+  margin-left: 50px;
+}
+#home .about h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+  font-weight: lighter;
+}
+.my-name {
+  color: orangered;
+}
+.about p {
+  font-size: 20px;
+  font-weight: bold;
+  color: linen;
+  position: relative;
+  margin-bottom: -10px;
+}
+.about p span {
+  background: purple;
+  color: wheat;
+  padding: 5px 10px;
+  position: absolute;
+  top: -5px;
+  left: 60px;
+}
+.developer {
+  animation: developer 6s linear infinite;
+}
+.designer {
+  letter-spacing: 1px;
+  animation: designer 6s linear infinite;
+}
+@keyframes developer {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: unset;
+  }
+}
+@keyframes designer {
+  100% {
+    z-index: -1;
+  }
+}
+#home .pics div {
+  width: 60%;
+  height: 25vw;
+  padding: 10px;
+  margin-left: 80px;
+  animation: border 3s linear infinite;
+}
+@keyframes border {
+  0% {
+    box-shadow: none;
+  }
+  30% {
+    box-shadow: 30px 30px 0 -20px magenta, 20px 20px transparent,
+      -30px -30px 0 -20px magenta, -20px -20px transparent;
+  }
+  70% {
+    box-shadow: 30px 30px 0 -20px magenta, 20px 20px transparent,
+      60px 60px 0 -30px blue, -30px -30px 0 -20px magenta,
+      -20px -20px transparent, -60px -60px 0 -30px blue;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+#home .pics div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#projects {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 200px;
+}
+#projects h2 {
+  font-size: 2rem;
+  margin: 100px 0 150px 0;
+  text-align: center;
+}
+.project-tile {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas: 1fr 1fr;
+  margin: 150px auto;
+  gap: 50px 0;
+}
+figure {
+  padding: 10px;
+  box-shadow: 0 0 10px;
+  border-radius: 5px;
+}
+figure img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+figcaption {
+  text-align: center;
+  padding: 10px;
+}
+figure:hover {
+  transform: scale(1.1);
+}
+figure div {
+  border: 2px solid linen;
+  color: orangered;
+  padding: 5px 0;
+}
+figure div p {
+  margin-top: 0;
+  color: blue;
+  font-weight: bold;
+}
+figure div span {
+  font-weight: bolder;
+}
+#profile-link {
+  padding: 20px;
+  text-decoration: none;
+  border: 2px solid;
+  color: linen;
+  border-radius: 10px;
+}
+#profile-link:hover {
+  background: orangered;
+  color: rgb(10, 10, 25);
+  font-weight: bold;
+}
+#contacts {
+  width: 100%;
+  background: linear-gradient(-45deg, linen, wheat, linen, wheat);
+}
+#contacts .container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 250px 50px;
+}
+.card {
+  border: 5px solid rgb(10, 10, 25);
+  border-radius: 30px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px black;
+}
+
+#contacts section {
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 20px;
+  color: rgb(16, 16, 45);
+}
+#contacts section div {
+  flex-direction: column;
+}
+#contacts section div a {
+  width: 80px;
+  height: 100px;
+  background-color: rgba(144, 141, 141, 0.5);
+  text-decoration: none;
+  color: orangered;
+  border-radius: 5px;
+}
+.fab,
+.fa {
+  font-size: 30px;
+}
+#contacts section div blockquote {
+  font-weight: bold;
+  font-size: 15px;
+}
+#contacts section div:hover a {
+  border: 2px solid;
+  padding: 5px;
+}
+.card .image {
+  width: 50%;
+  height: 20px;
+  background: rgb(16, 16, 45);
+  border-radius: 0px 0 20px 20px;
+  margin: 0 auto 20px;
+}
+.content p {
+  width: 500px;
+  font-size: 25px;
+  color: rgb(16, 16, 45);
+  line-height: 35px;
+  margin-right: 80px;
+}
+.content p span {
+  color: orangered;
+  font-size: 20px;
+  margin-left: 20px;
+}
+footer {
+  width: 100%;
+  height: 150px;
+  background: rgb(10, 10, 25);
+  border-top: 5px solid blue;
+  margin: auto;
+}
+#contacts section div,
+#contacts section div a,
+.ball,
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ball-one {
+  width: 50px;
+  height: 50px;
+  background: orangered;
+  border-radius: 50%;
+}
+.ball-two {
+  width: 40px;
+  height: 40px;
+  background: blue;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+footer p {
+  font-size: 30px;
+}
+@media (max-width: 900px) {
+  #home {
+    grid-template-columns: 1fr;
+  }
+  #home .about {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .about .p2 {
+    margin-left: -130px;
+  }
+  .about p span {
+    left: 56%;
+  }
+  #home .pics div {
+    height: 50vw;
+    margin: 0 auto;
+  }
+  .project-tile {
+    grid-template-columns: 1fr 1fr;
+  }
+  #contacts .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  #contacts .content {
+    margin: 100px auto;
+    text-align: center;
+  }
+  #contacts .content p {
+    margin: 0;
+  }
+}
+@media (max-width: 600px) {
+  nav {
+    padding: 26px 0;
+  }
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+  .open {
+    margin-right: 30px;
+  }
+  #navbar ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    flex-direction: column;
+    background: rgb(19, 19, 48);
+    border: 2px solid orangered;
+    width: 100%;
+    height: 400px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: none;
+  }
+  @keyframes ul {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  .close {
+    margin: 20px 0 40px 30px;
+  }
+  #navbar ul li {
+    padding: 0 100px 0 30px;
+    margin: 30px 0;
+  }
+  #navbar ul li:hover {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 90%,
+      orangered 90%
+    );
+  }
+  .about p span {
+    left: 58%;
+  }
+  .project-tile {
+    grid-template-columns: 1fr;
+  }
+  #contacts .container {
+    padding-inline: 0;
+  }
+  #contacts .content p {
+    width: 350px;
+    margin: 0;
+  }
+}
+@media (max-width: 500px) {
+  footer {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+}
